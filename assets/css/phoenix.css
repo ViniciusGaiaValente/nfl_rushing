@@ -1,0 +1,6 @@
+.app-header {
+  color: red;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+}
