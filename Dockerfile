@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY mix.exs .
 COPY mix.lock .
+COPY rushing.json .
 
 RUN mkdir assets
 
