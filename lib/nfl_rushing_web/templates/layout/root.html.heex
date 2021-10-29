@@ -9,15 +9,32 @@
   <%= live_title_tag assigns[:page_title] || "NflRushing", suffix: " · Phoenix Framework" %>
   <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css" )} />
   <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js" )}></script>
+  <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
 </head>
 
 <body>
-  <header class="flex justify-center bg-indigo-600">
+  <header class="flex justify-center bg-indigo-700">
     <h1 class="text-4xl text-white p-3">NFL Rush</h1>
   </header>
   <main class="container mx-auto">
     <%= @inner_content %>
   </main>
 </body>
+
+<script>
+  function openPopover(event, tooltipID) {
+    let element = event.target;
+    while (element.nodeName !== "BUTTON") {
+      element = element.parentNode;
+    }
+    var popper = Popper.createPopper(
+      element,
+      document.getElementById(tooltipID), {
+        placement: "top",
+      }
+    );
+    document.getElementById(tooltipID).classList.toggle("hidden");
+  }
+</script>
 
 </html>

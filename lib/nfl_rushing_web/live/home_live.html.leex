@@ -1,1 +1,439 @@
-<h2 class="text-2xl text-center">Home Page</h2>
+<%# Table %>
+
+<section>
+
+  <%# Table Web %>
+
+  <table class="hidden md:table shadow-lg mx-auto my-10">
+
+    <%# Table Web Headers%>
+
+    <tr>
+      <th class="bg-indigo-400 border text-left px-0 py-0 lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-player')"
+          onmouseleave="openPopover(event,'tooltip-player')">
+          Player
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-team')"
+          onmouseleave="openPopover(event,'tooltip-team')">
+          Team
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-pos')"
+          onmouseleave="openPopover(event,'tooltip-pos')">
+          Pos
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-att')"
+          onmouseleave="openPopover(event,'tooltip-att')">
+          Att
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-att/g')"
+          onmouseleave="openPopover(event,'tooltip-att/g')">
+          Att/G
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-yds')"
+          onmouseleave="openPopover(event,'tooltip-yds')">
+          Yds
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-avg')"
+          onmouseleave="openPopover(event,'tooltip-avg')">
+          Avg
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-yds/g')"
+          onmouseleave="openPopover(event,'tooltip-yds/g')">
+          Yds/G
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-td')"
+          onmouseleave="openPopover(event,'tooltip-td')">
+          TD
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-lng')"
+          onmouseleave="openPopover(event,'tooltip-lng')">
+          Lng
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-lng/td')"
+          onmouseleave="openPopover(event,'tooltip-lng/td')">
+          Lng/TD:
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-1st')"
+          onmouseleave="openPopover(event,'tooltip-1st')">
+          1st
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-1st%')"
+          onmouseleave="openPopover(event,'tooltip-1st%')">
+          1st%
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-20+')"
+          onmouseleave="openPopover(event,'tooltip-20+')">
+          20+
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-40+')"
+          onmouseleave="openPopover(event,'tooltip-40+')">
+          40+
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-fum')"
+          onmouseleave="openPopover(event,'tooltip-fum')">
+          FUM
+        </button>
+      </th>
+    </tr>
+
+    <%# Table Web Headers%>
+
+    <%# Table Web Body%>
+
+    <%= for result <- @results do%>
+
+    <tr>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.name %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.team %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.position %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.total_rushing_attempts %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.rushing_attempts_per_game %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.total_rushing_yards %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.rushing_yards_per_attempt %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.rushing_yards_per_game %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.total_rushing_touchdowns %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.longest_rush %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.was_longest_rush_a_touchdown %>
+      </td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.rushing_first_downs %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.rushing_first_down_percentage %>
+      </td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.rushes_for_more_than_20_yards %>
+      </td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.rushes_for_more_than_40_yards %>
+      </td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.rushing_fumbles %></td>
+    </tr>
+
+    <% end %>
+
+    <%# Table Web Body%>
+
+  </table>
+
+  <%# Table Web %>
+
+  <%# Table Mobile %>
+
+  <%= for result <- @results do%>
+
+  <div class="md:hidden max-w-xs mx-auto my-10">
+    <div class="my-2 shadow-lg border">
+      <h2
+        class="bg-indigo-400 border text-center text-white text-lg font-bold lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <%= result.name %></h2>
+      <div class="flex flex-row justify-between">
+        <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-team')"
+          onmouseleave="openPopover(event,'tooltip-team')">
+          Team:
+        </button>
+
+        <p class="p-3 text-center"><%= result.team %></p>
+      </div>
+      <hr class="divide">
+      <div class="flex flex-row justify-between">
+        <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-pos')"
+          onmouseleave="openPopover(event,'tooltip-pos')">
+          Pos:
+        </button>
+
+        <p class="p-3 text-center"><%= result.position %></p>
+      </div>
+      <hr class="divide">
+      <div class="flex flex-row justify-between">
+        <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-att')"
+          onmouseleave="openPopover(event,'tooltip-att')">
+          Att:
+        </button>
+
+        <p class="p-3 text-center"><%= result.total_rushing_attempts %>
+        </p>
+      </div>
+      <hr class="divide">
+      <div class="flex flex-row justify-between">
+        <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-att/g')"
+          onmouseleave="openPopover(event,'tooltip-att/g')">
+          Att/G:
+        </button>
+
+        <p class="p-3 text-center">
+          <%= result.rushing_attempts_per_game %></p>
+      </div>
+      <hr class="divide">
+      <div class="flex flex-row justify-between">
+        <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-yds')"
+          onmouseleave="openPopover(event,'tooltip-yds')">
+          Yds:
+        </button>
+
+        <p class="p-3 text-center"><%= result.total_rushing_yards %></p>
+      </div>
+      <hr class="divide">
+      <div class="flex flex-row justify-between">
+        <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-avg')"
+          onmouseleave="openPopover(event,'tooltip-avg')">
+          Avg:
+        </button>
+
+        <p class="p-3 text-center">
+          <%= result.rushing_yards_per_attempt %></p>
+      </div>
+      <hr class="divide">
+      <div class="flex flex-row justify-between">
+        <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-yds/g')"
+          onmouseleave="openPopover(event,'tooltip-yds/g')">
+          Yds/G:
+        </button>
+
+        <p class="p-3 text-center"><%= result.rushing_yards_per_game %>
+        </p>
+      </div>
+      <hr class="divide">
+      <div class="flex flex-row justify-between">
+        <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-td')"
+          onmouseleave="openPopover(event,'tooltip-td')">
+          TD:
+        </button>
+
+        <p class="p-3 text-center"><%= result.total_rushing_touchdowns %>
+        </p>
+      </div>
+      <hr class="divide">
+      <div class="flex flex-row justify-between">
+        <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-lng')"
+          onmouseleave="openPopover(event,'tooltip-lng')">
+          Lng:
+        </button>
+
+        <p class="p-3 text-center"><%= result.longest_rush %></p>
+      </div>
+      <hr class="divide">
+      <div class="flex flex-row justify-between">
+        <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-lng/td')"
+          onmouseleave="openPopover(event,'tooltip-lng/td')">
+          Lng/TD:
+        </button>
+
+        <p class="p-3 text-center">
+          <%= result.was_longest_rush_a_touchdown %></p>
+      </div>
+      <hr class="divide">
+      <div class="flex flex-row justify-between">
+        <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-1st')"
+          onmouseleave="openPopover(event,'tooltip-1st')">
+          1st:
+        </button>
+
+        <p class="p-3 text-center"><%= result.rushing_first_downs %></p>
+      </div>
+      <hr class="divide">
+      <div class="flex flex-row justify-between">
+        <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-1st%')"
+          onmouseleave="openPopover(event,'tooltip-1st%')">
+          1st%:
+        </button>
+
+        <p class="p-3 text-center">
+          <%= result.rushing_first_down_percentage %></p>
+      </div>
+      <hr class="divide">
+      <div class="flex flex-row justify-between">
+        <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-20+')"
+          onmouseleave="openPopover(event,'tooltip-20+')">
+          20+:
+        </button>
+
+        <p class="p-3 text-center">
+          <%= result.rushes_for_more_than_20_yards %></p>
+      </div>
+      <hr class="divide">
+      <div class="flex flex-row justify-between">
+        <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-40+')"
+          onmouseleave="openPopover(event,'tooltip-40+')">
+          40+:
+        </button>
+
+        <p class="p-3 text-center">
+          <%= result.rushes_for_more_than_40_yards %></p>
+      </div>
+      <hr class="divide">
+      <div class="flex flex-row justify-between">
+        <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-fum')"
+          onmouseleave="openPopover(event,'tooltip-fum')">
+          Fum:
+        </button>
+
+        <p class="p-3 text-center"><%= result.rushing_fumbles %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+  <%# Table Mobile %>
+
+</section>
+
+<%# Table %>
+
+<%# Tooltips %>
+
+<div
+  class="hidden bg-white border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
+  id="tooltip-player">
+  <div class="bg-white text-gray opacity-75 p-3 mb-0 border border-solid uppercase rounded">
+    Player's name
+  </div>
+</div>
+
+<div
+  class="hidden bg-white border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
+  id="tooltip-team">
+  <div class="bg-white text-gray opacity-75 p-3 mb-0 border border-solid uppercase rounded">
+    Player's team abbreviation
+  </div>
+</div>
+
+<div
+  class="hidden bg-white border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
+  id="tooltip-pos">
+  <div class="bg-white text-gray opacity-75 p-3 mb-0 border border-solid uppercase rounded">
+    Player's postion.
+  </div>
+</div>
+
+<div
+  class="hidden bg-white border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
+  id="tooltip-att">
+  <div class="bg-white text-gray opacity-75 p-3 mb-0 border border-solid uppercase rounded">
+    Rushing Attempts.
+  </div>
+</div>
+
+<div
+  class="hidden bg-white border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
+  id="tooltip-att/g">
+  <div class="bg-white text-gray opacity-75 p-3 mb-0 border border-solid uppercase rounded">
+    Rushing Attempts Per Game Average
+  </div>
+</div>
+
+<div
+  class="hidden bg-white border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
+  id="tooltip-yds">
+  <div class="bg-white text-gray opacity-75 p-3 mb-0 border border-solid uppercase rounded">
+    Total Rushing Yard
+  </div>
+</div>
+
+<div
+  class="hidden bg-white border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
+  id="tooltip-avg">
+  <div class="bg-white text-gray opacity-75 p-3 mb-0 border border-solid uppercase rounded">
+    Rushing Average Yards Per Attempt
+  </div>
+</div>
+
+<div
+  class="hidden bg-white border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
+  id="tooltip-yds/g">
+  <div class="bg-white text-gray opacity-75 p-3 mb-0 border border-solid uppercase rounded">
+    Rushing Yards Per Game
+  </div>
+</div>
+
+<div
+  class="hidden bg-white border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
+  id="tooltip-td">
+  <div class="bg-white text-gray opacity-75 p-3 mb-0 border border-solid uppercase rounded">
+    Total Rushing Touchdowns
+  </div>
+</div>
+
+<div
+  class="hidden bg-white border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
+  id="tooltip-lng">
+  <div class="bg-white text-gray opacity-75 p-3 mb-0 border border-solid uppercase rounded">
+    Longest Rush
+  </div>
+</div>
+
+<div
+  class="hidden bg-white border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
+  id="tooltip-lng/td">
+  <div class="bg-white text-gray opacity-75 p-3 mb-0 border border-solid uppercase rounded">
+    Was Longest Rush a Touchdown?
+  </div>
+</div>
+
+<div
+  class="hidden bg-white border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
+  id="tooltip-1st">
+  <div class="bg-white text-gray opacity-75 p-3 mb-0 border border-solid uppercase rounded">
+    Rushing First Downs
+  </div>
+</div>
+
+<div
+  class="hidden bg-white border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
+  id="tooltip-1st%">
+  <div class="bg-white text-gray opacity-75 p-3 mb-0 border border-solid uppercase rounded">
+    Rushing First Downs Percentage
+  </div>
+</div>
+
+<div
+  class="hidden bg-white border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
+  id="tooltip-20+">
+  <div class="bg-white text-gray opacity-75 p-3 mb-0 border border-solid uppercase rounded">
+    Rushing 20+ Yards Each
+  </div>
+</div>
+
+<div
+  class="hidden bg-white border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
+  id="tooltip-40+">
+  <div class="bg-white text-gray opacity-75 p-3 mb-0 border border-solid uppercase rounded">
+    Rushing 40+ Yards Each
+  </div>
+</div>
+
+<div
+  class="hidden bg-white border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
+  id="tooltip-fum">
+  <div class="bg-white text-gray opacity-75 p-3 mb-0 border border-solid uppercase rounded">
+    Rushing Fumbles
+  </div>
+</div>
+
+<%# Tooltips %>
