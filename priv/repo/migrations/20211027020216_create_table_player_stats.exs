@@ -2,9 +2,11 @@ defmodule NflRushing.Repo.Migrations.CreateTablePlayerStats do
   use Ecto.Migration
 
   def up do
+    execute "CREATE EXTENSION citext"
+
     create table("player_stats", primary_key: false) do
       add :id, :uuid, primary_key: true
-      add :name, :string
+      add :name, :citext
       add :team, :string
       add :position, :string
       add :total_rushing_attempts, :integer
@@ -27,5 +29,7 @@ defmodule NflRushing.Repo.Migrations.CreateTablePlayerStats do
 
   def down do
     drop table("player_stats")
+
+    execute "DROP EXTENSION citext"
   end
 end

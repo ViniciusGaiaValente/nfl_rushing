@@ -1,3 +1,226 @@
+<%# Form %>
+
+<section>
+  <div class="mx-auto my-10 w-max max-w-full p-5 border shadow-lg">
+    <form action="#" phx-submit="save">
+      <div class="flex flex-col">
+
+        <%# Search by name input %>
+
+        <div class="my-2">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="search-by-name">
+            Search By Name
+          </label>
+
+          <%= text_input :params, :name, id: "search-by-name", placeholder: "What do you want to get done?", class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+        </div>
+
+        <%# Search by name input %>
+
+        <%# Row with order by options %>
+
+        <div class="mx-auto flex flex-col sm:flex-row">
+
+          <%# Order by %>
+
+          <div class="flex flex-row py-2 mx-auto sm:px-5">
+
+            <%# Select %>
+
+            <div class="my-auto mr-3">
+
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="order-by-0">
+                Order By
+              </label>
+
+              <div class="relative">
+
+                <%= select :params, :order_by_0, ["Yds", "Lng", "TD"], id: "order-by-0", prompt: "None", class: "block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+                </div>
+              </div>
+
+            </div>
+
+            <%# Select %>
+
+            <%# Radio %>
+
+            <div class="flex flex-col mt-auto">
+
+              <label class="flex flex-row align-middle font-bold">
+
+                <%= radio_button :params, :order_by_0_flow, "desc", id: "order-by-0-flow", class: "my-auto", checked: "checked" %>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12" />
+                </svg>
+
+              </label>
+
+              <label class="flex flex-rowfont-bold">
+
+                <%= radio_button :params, :order_by_0_flow, "asc", id: "order-by-0-flow", class: "my-auto" %>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17 13l-5 5m0 0l-5-5m5 5V6" />
+                </svg>
+
+              </label>
+
+            </div>
+
+            <%# Radio %>
+
+          </div>
+
+          <%# Order by%>
+
+          <%# Them by %>
+
+          <div class="flex flex-row py-2 mx-auto sm:px-5">
+
+            <%# Select %>
+
+            <div class="my-auto mr-3">
+
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="order-by-1">
+                Them By
+              </label>
+
+              <div class="relative">
+
+                <%= select :params, :order_by_1, ["Yds", "Lng", "TD"], id: "order-by-1", prompt: "None", class: "block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+                </div>
+              </div>
+
+            </div>
+
+            <%# Select %>
+
+            <%# Radios %>
+
+            <div class="flex flex-col mt-auto">
+
+              <label class="flex flex-row align-middle font-bold">
+
+                <%= radio_button :params, :order_by_1_flow, "desc", id: "order-by-1-flow", class: "my-auto", checked: "checked" %>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12" />
+                </svg>
+
+              </label>
+
+              <label class="flex flex-rowfont-bold">
+
+                <%= radio_button :params, :order_by_1_flow, "asc", id: "order-by-1-flow", class: "my-auto" %>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17 13l-5 5m0 0l-5-5m5 5V6" />
+                </svg>
+
+              </label>
+
+            </div>
+
+            <%# Radios %>
+
+          </div>
+
+          <%# Them by %>
+
+          <%# Second them by %>
+
+          <div class="flex flex-row py-2 mx-auto sm:px-5">
+
+            <%# Select %>
+
+            <div class="my-auto mr-3">
+
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="order-by-2">
+                Them By
+              </label>
+
+              <div class="relative">
+
+                <%= select :params, :order_by_2, ["Yds", "Lng", "TD"], id: "order-by-2", prompt: "None", class: "block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+                </div>
+              </div>
+
+            </div>
+
+            <%# Select %>
+
+            <%# Radio %>
+
+            <div class="flex flex-col mt-auto">
+
+              <label class="flex flex-row align-middle font-bold">
+
+                <%= radio_button :params, :order_by_2_flow, "desc", id: "order-by-2-flow", class: "my-auto", checked: "checked" %>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12" />
+                </svg>
+
+              </label>
+
+              <label class="flex flex-rowfont-bold">
+
+                <%= radio_button :params, :order_by_2_flow, "asc", id: "order-by-2-flow", class: "my-auto" %>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17 13l-5 5m0 0l-5-5m5 5V6" />
+                </svg>
+
+              </label>
+
+            </div>
+
+            <%# Radio %>
+
+          </div>
+
+          <%# Second them by %>
+
+        </div>
+
+        <%# Row with order by options %>
+
+        <%# Confirm Button %>
+
+        <%= submit "Find The Stats!", phx_disable_with: "Searching...", class: "w-max mx-auto my-5 shadow bg-indigo-700 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" %>
+
+        <%# Confirm Button %>
+
+      </div>
+    </form>
+  </div>
+</section>
+
+<%# Form %>
+
 <%# Table %>
 
 <section>
@@ -8,7 +231,7 @@
 
     <%# Table Web Headers%>
 
-    <tr>
+    <tr class="sticky top-0">
       <th class="bg-indigo-400 border text-left px-0 py-0 lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
         <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-player')"
           onmouseleave="openPopover(event,'tooltip-player')">

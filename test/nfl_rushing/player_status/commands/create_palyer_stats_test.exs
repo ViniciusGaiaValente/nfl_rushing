@@ -35,7 +35,7 @@ defmodule NflRushing.Stats.Commands.CreatePlayerStatsTest do
              name: "Joe doe",
              team: "DAT",
              position: "DAP",
-             total_rushing_attempts: 2.0,
+             total_rushing_attempts: 2,
              rushing_attempts_per_game: 2.0,
              total_rushing_yards: 7.0,
              rushing_yards_per_attempt: 3.5,
@@ -44,13 +44,12 @@ defmodule NflRushing.Stats.Commands.CreatePlayerStatsTest do
              longest_rush: 10.0,
              was_longest_rush_a_touchdown: false,
              rushing_first_downs: 0,
-             rushing_first_down_percentage: 0,
+             rushing_first_down_percentage: 0.0,
              rushes_for_more_than_20_yards: 0,
              rushes_for_more_than_40_yards: 0,
-             rushing_fumbles: 0
+             rushing_fumbles: 0,
              inserted_at: _,
-             updated_at: _,
-             was_longest_rush_a_touchdown: false
-           } = Repo.get_by(PlayerStats, id: id) |> IO.inspect()
+             updated_at: _
+           } = Repo.get_by(PlayerStats, id: id)
   end
 end

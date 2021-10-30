@@ -49,7 +49,6 @@ defmodule NflRushing.Stats.Commands.IndexPlayerStats do
   defp add_sorting_options(query, []), do: query
 
   defp add_sorting_options(query, sort_by) when is_list(sort_by) do
-    order_by = Keyword.new(sort_by)
-    from(p in query, order_by: ^order_by)
+    from(p in query, order_by: ^sort_by)
   end
 end
