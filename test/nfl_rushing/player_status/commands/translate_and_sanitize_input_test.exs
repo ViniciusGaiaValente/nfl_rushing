@@ -1,7 +1,4 @@
 defmodule NflRushing.Stats.Commands.TranslateAndSanitizeInputTest do
-  @moduledoc """
-  Test module for NflRushing.Stats.Commands.TranslateAndSanitizeInput
-  """
   use NflRushing.DataCase, async: true
 
   alias NflRushing.Stats.Commands.TranslateAndSanitizeInput

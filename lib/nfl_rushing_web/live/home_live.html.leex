@@ -2,7 +2,7 @@
 
 <section>
   <div class="mx-auto my-10 w-max max-w-full p-5 border shadow-lg">
-    <form action="#" phx-submit="save">
+    <form action="#" phx-submit="search">
       <div class="flex flex-col">
 
         <%# Search by name input %>
@@ -221,6 +221,14 @@
 
 <%# Form %>
 
+<div class="w-full flex">
+  <% url = Routes.csv_path(@socket, :show, %{name: @name, order_by_0: @order_by_0, order_by_0_flow: @order_by_0_flow, order_by_1: @order_by_1, order_by_1_flow: @order_by_1_flow, order_by_2: @order_by_2, order_by_2_flow: @order_by_2_flow}) %>
+  <a download href="<%= url %>"
+    class="mx-auto my-5 shadow bg-indigo-700 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+    Download Results
+  </a>
+</div>
+
 <%# Table %>
 
 <section>
@@ -295,7 +303,7 @@
       <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
         <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-lng/td')"
           onmouseleave="openPopover(event,'tooltip-lng/td')">
-          Lng/TD:
+          Lng/TD
         </button>
       </th>
       <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
@@ -465,7 +473,7 @@
       <div class="flex flex-row justify-between">
         <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-lng/td')"
           onmouseleave="openPopover(event,'tooltip-lng/td')">
-          Lng/TD:
+          Lng/TD
         </button>
 
         <p class="p-3 text-center">

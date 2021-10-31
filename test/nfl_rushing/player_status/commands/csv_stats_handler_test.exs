@@ -1,8 +1,8 @@
-defmodule NflRushing.Stats.Commands.IndexPlayerStatsTest do
+defmodule NflRushing.Stats.Commands.CsvStatsHandlerTest do
   use NflRushing.DataCase, async: true
 
+  alias NflRushing.Stats.Commands.CsvStatsHandler
   alias NflRushing.Stats.Models.PlayerStats
-  alias NflRushing.Stats.Commands.IndexPlayerStats
 
   @data [
     %{
@@ -125,31 +125,75 @@ defmodule NflRushing.Stats.Commands.IndexPlayerStatsTest do
     on_exit(fn -> Repo.delete_all(PlayerStats) end)
   end
 
-  test "IndexPlayerStats.execute/0 returns all the records" do
-    assert 6 == length(IndexPlayerStats.execute())
+  test "CsvStatsHandler.stream_results/3 stream headers correctly" do
+    CsvStatsHandler.stream_results(
+      fn stream ->
+        list =
+          for csv_row <- stream do
+            csv_row
+            |> Enum.reject(fn x -> x == 44 end)
+          end
+
+        assert Enum.any?(list, fn x ->
+                 x == [
+                   "Player",
+                   "Team",
+                   "Pos",
+                   "Att",
+                   "Att/G",
+                   "Yds",
+                   "Avg",
+                   "Yds/G",
+                   "TD",
+                   "Lng",
+                   "Lng/TD",
+                   "1st",
+                   "1st%",
+                   "20+",
+                   "40+",
+                   "FUM",
+                   "\r\n"
+                 ]
+               end)
+      end,
+      nil,
+      []
+    )
   end
 
-  test "IndexPlayerStats.execute/2 sort data correctly" do
-    assert [%{name: "John A Doe 2"} | _] =
-             IndexPlayerStats.execute(nil, [
-               {:asc, :longest_rush},
-               {:desc, :total_rushing_touchdowns},
-               {:asc, :total_rushing_yards}
-             ])
+  test "CsvStatsHandler.stream_results/3 stream content correctly" do
+    CsvStatsHandler.stream_results(
+      fn stream ->
+        list =
+          for csv_row <- stream do
+            csv_row
+          end
 
-    assert [%{name: "John B Doe 5"} | _] =
-             IndexPlayerStats.execute(nil, [
-               {:desc, :longest_rush},
-               {:asc, :total_rushing_touchdowns},
-               {:desc, :total_rushing_yards}
-             ])
-  end
-
-  test "IndexPlayerStats.execute/1 filter data correctly" do
-    assert [%{name: "John A Doe 1"}, %{name: "John A Doe 2"}, %{name: "John A Doe 3"}] =
-             IndexPlayerStats.execute("A")
-
-    assert [%{name: "John B Doe 4"}, %{name: "John B Doe 5"}, %{name: "John B Doe 6"}] =
-             IndexPlayerStats.execute("B")
+        assert list
+               |> Enum.at(1)
+               |> Enum.at(0)
+               |> Enum.reject(fn x -> x == 44 end) == [
+                 "John A Doe 2",
+                 "FOO",
+                 "BAR",
+                 "0",
+                 "0.0",
+                 "1.0",
+                 "0.0",
+                 "0.0",
+                 "4",
+                 "1.0",
+                 "false",
+                 "0",
+                 "0.0",
+                 "0",
+                 "0",
+                 "0",
+                 "\r\n"
+               ]
+      end,
+      "A",
+      desc: :total_rushing_touchdowns
+    )
   end
 end

@@ -17,6 +17,7 @@ defmodule NflRushingWeb.Router do
   scope "/", NflRushingWeb do
     pipe_through :browser
 
+    get "/csv", CsvController, :show
     live "/", HomeLive, :index
   end
 
