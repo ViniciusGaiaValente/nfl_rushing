@@ -21,12 +21,12 @@ defmodule NflRushingWeb.HomeLive do
       assign(socket, %{
         results: IndexPlayerStats.execute(),
         name: nil,
-        order_by_0: nil,
-        order_by_0_flow: nil,
-        order_by_1: nil,
-        order_by_1_flow: nil,
-        order_by_2: nil,
-        order_by_2_flow: nil,
+        order_by_0: "-",
+        order_by_0_flow: "desc",
+        order_by_1: "-",
+        order_by_1_flow: "desc",
+        order_by_2: "-",
+        order_by_2_flow: "desc",
         sort_by: []
       })
 

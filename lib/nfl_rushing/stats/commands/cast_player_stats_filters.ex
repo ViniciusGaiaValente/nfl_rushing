@@ -5,7 +5,8 @@ defmodule NflRushing.Stats.Commands.CastPlayerStatsFilters do
 
   @doc """
   Recieve a raw map (string to string).
-  Returns a map containing the name to be used as a filter, a keyword list to be used a sort option
+  Returns a map containing the name to be used as a filter, a keyword list to be used a sort option,
+  and the raw fields: order_by_0, order_by_0_flow, order_by_1, order_by_1_flow, order_by_2, order_by_2_flow.
 
   ## Examples
       >iex NflRushing.Stats.Commands.CreatePlayer.execute(%{
@@ -105,17 +106,17 @@ defmodule NflRushing.Stats.Commands.CastPlayerStatsFilters do
       "" ->
         nil
 
-      order_by_0 ->
-        order_by_0
+      value ->
+        value
     end
   end
 
   defp translate_field("Yds"), do: :total_rushing_yards
   defp translate_field("Lng"), do: :longest_rush
   defp translate_field("TD"), do: :total_rushing_touchdowns
-  defp translate_field(nil), do: nil
+  defp translate_field(_), do: nil
 
   defp translate_flow("asc"), do: :asc
   defp translate_flow("desc"), do: :desc
-  defp translate_flow(nil), do: nil
+  defp translate_flow(_), do: nil
 end
