@@ -1,3 +1,39 @@
+# Installing and running
+
+In order to run this project, you need [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/) installed.
+This project contains a [Makefile](/Makefile) with a handful of useful commands to run the server and the suite tests.
+
+### Run the test suite
+
+```bash
+make test
+```
+
+Or if cannot run commands from the Makefile:
+
+```bash
+docker-compose down
+docker-compose build
+docker-compose run --rm -e "MIX_ENV=test" web mix test
+```
+
+### Run the project
+
+```bash
+make up
+```
+
+Or if cannot run commands from the Makefile:
+
+
+```bash
+docker-compose down
+docker-compose build
+docker-compose up
+```
+
+Now the project should be accessible at http://localhost:4000
+
 # theScore "the Rush" Interview Challenge
 At theScore, we are always looking for intelligent, resourceful, full-stack developers to join our growing team. To help us evaluate new talent, we have created this take-home interview question. This question should take you no more than a few hours.
 
@@ -52,38 +88,3 @@ We will evaluate you on your ability to solve the problem defined in the require
 
 ### Help
 If you have any questions regarding requirements, do not hesitate to email your contact at theScore for clarification.
-
-### Installation and running this solution
-In order to run this project, you need [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/) installed.
-This project contains a [Makefile](/Makefile) with a handful of useful commands to run the server and the suite tests.
-
-#### Run the test suite
-
-```bash
-make test
-```
-
-Or if cannot run commands from the Makefile:
-
-```bash
-docker-compose down
-docker-compose build
-docker-compose run --rm -e "MIX_ENV=test" web mix test
-```
-
-#### Run the project
-
-```bash
-make up
-```
-
-Or if cannot run commands from the Makefile:
-
-
-```bash
-docker-compose down
-docker-compose build
-docker-compose up
-```
-
-Now the project should be accessible at http://localhost:4000
