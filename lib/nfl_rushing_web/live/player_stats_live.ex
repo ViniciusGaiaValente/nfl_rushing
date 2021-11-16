@@ -1,4 +1,4 @@
-defmodule NflRushingWeb.HomeLive do
+defmodule NflRushingWeb.PlayerStatsLive do
   use NflRushingWeb, :live_view
 
   alias NflRushing.Stats.Commands.CastPlayerStatsFilters

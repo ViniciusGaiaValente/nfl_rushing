@@ -1,0 +1,74 @@
+<%# Form %>
+
+<section>
+
+  <div class="mx-auto my-10 w-max max-w-full p-5 border shadow-lg">
+    <form action="#" phx-submit="search">
+      <div class="flex flex-col">
+
+        <%# Search by name input %>
+
+        <div class="my-2">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="search-by-name">
+            Search By Name
+          </label>
+
+          <%= text_input :params, :name, id: "search-by-name", value: @name, placeholder: "Player's Name", class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+        </div>
+
+        <%# Search by name input %>
+
+        <%# Row with order by options %>
+
+        <div class="mx-auto flex flex-col sm:flex-row">
+
+          <%# Order by %>
+
+          <%= live_component @socket, NflRushingWeb.Components.PlayerStatsFormOrderByLive, label: "Order By", order_by_value: @order_by_0,
+            order_by_param: :order_by_0, order_by_flow_value: @order_by_0_flow, order_by_flow_param: :order_by_0_flow %>
+
+          <%# Order by%>
+
+          <%# Them by %>
+
+          <%= live_component @socket, NflRushingWeb.Components.PlayerStatsFormOrderByLive, label: "Them By", order_by_value: @order_by_1,
+            order_by_param: :order_by_1, order_by_flow_value: @order_by_1_flow, order_by_flow_param: :order_by_1_flow %>
+
+          <%# Them by %>
+
+          <%# Second them by %>
+
+          <%= live_component @socket, NflRushingWeb.Components.PlayerStatsFormOrderByLive, label: "Them By", order_by_value: @order_by_2,
+            order_by_param: :order_by_2, order_by_flow_value: @order_by_2_flow, order_by_flow_param: :order_by_2_flow %>
+
+          <%# Second them by %>
+
+        </div>
+
+        <%# Row with order by options %>
+
+        <%# Confirm Button %>
+
+        <%= submit "Find The Stats!", phx_disable_with: "Searching...", class: "w-max mx-auto my-5 shadow bg-indigo-700 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" %>
+
+        <%# Confirm Button %>
+
+      </div>
+    </form>
+  </div>
+
+  <%# Download Button %>
+
+  <div class="w-full flex">
+    <% url = Routes.csv_path(@socket, :show, %{name: @name, order_by_0: @order_by_0, order_by_0_flow: @order_by_0_flow, order_by_1: @order_by_1, order_by_1_flow: @order_by_1_flow, order_by_2: @order_by_2, order_by_2_flow: @order_by_2_flow}) %>
+    <a download href="<%= url %>"
+      class="mx-auto my-5 shadow bg-indigo-700 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+      Download Results
+    </a>
+  </div>
+
+  <%# Download Button %>
+
+</section>
+
+<%# Form %>
