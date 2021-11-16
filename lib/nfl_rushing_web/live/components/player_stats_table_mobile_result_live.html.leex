@@ -1,0 +1,150 @@
+<div class="md:hidden max-w-xs mx-auto my-10">
+  <div class="my-2 shadow-lg border">
+    <h2
+      class="bg-indigo-400 border text-center text-white text-lg font-bold lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+      <%= @result.name %></h2>
+    <div class="flex flex-row justify-between">
+      <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-team')"
+        onmouseleave="openPopover(event,'tooltip-team')">
+        Team:
+      </button>
+
+      <p class="p-3 text-center"><%= @result.team %></p>
+    </div>
+    <hr class="divide">
+    <div class="flex flex-row justify-between">
+      <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-pos')"
+        onmouseleave="openPopover(event,'tooltip-pos')">
+        Pos:
+      </button>
+
+      <p class="p-3 text-center"><%= @result.position %></p>
+    </div>
+    <hr class="divide">
+    <div class="flex flex-row justify-between">
+      <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-att')"
+        onmouseleave="openPopover(event,'tooltip-att')">
+        Att:
+      </button>
+
+      <p class="p-3 text-center"><%= @result.total_rushing_attempts %>
+      </p>
+    </div>
+    <hr class="divide">
+    <div class="flex flex-row justify-between">
+      <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-att/g')"
+        onmouseleave="openPopover(event,'tooltip-att/g')">
+        Att/G:
+      </button>
+
+      <p class="p-3 text-center">
+        <%= @result.rushing_attempts_per_game %></p>
+    </div>
+    <hr class="divide">
+    <div class="flex flex-row justify-between">
+      <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-yds')"
+        onmouseleave="openPopover(event,'tooltip-yds')">
+        Yds:
+      </button>
+
+      <p class="p-3 text-center"><%= @result.total_rushing_yards %></p>
+    </div>
+    <hr class="divide">
+    <div class="flex flex-row justify-between">
+      <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-avg')"
+        onmouseleave="openPopover(event,'tooltip-avg')">
+        Avg:
+      </button>
+
+      <p class="p-3 text-center">
+        <%= @result.rushing_yards_per_attempt %></p>
+    </div>
+    <hr class="divide">
+    <div class="flex flex-row justify-between">
+      <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-yds/g')"
+        onmouseleave="openPopover(event,'tooltip-yds/g')">
+        Yds/G:
+      </button>
+
+      <p class="p-3 text-center"><%= @result.rushing_yards_per_game %>
+      </p>
+    </div>
+    <hr class="divide">
+    <div class="flex flex-row justify-between">
+      <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-td')"
+        onmouseleave="openPopover(event,'tooltip-td')">
+        TD:
+      </button>
+
+      <p class="p-3 text-center"><%= @result.total_rushing_touchdowns %>
+      </p>
+    </div>
+    <hr class="divide">
+    <div class="flex flex-row justify-between">
+      <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-lng')"
+        onmouseleave="openPopover(event,'tooltip-lng')">
+        Lng:
+      </button>
+
+      <p class="p-3 text-center"><%= @result.longest_rush %></p>
+    </div>
+    <hr class="divide">
+    <div class="flex flex-row justify-between">
+      <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-lng/td')"
+        onmouseleave="openPopover(event,'tooltip-lng/td')">
+        Lng/TD
+      </button>
+
+      <p class="p-3 text-center">
+        <%= @result.was_longest_rush_a_touchdown %></p>
+    </div>
+    <hr class="divide">
+    <div class="flex flex-row justify-between">
+      <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-1st')"
+        onmouseleave="openPopover(event,'tooltip-1st')">
+        1st:
+      </button>
+
+      <p class="p-3 text-center"><%= @result.rushing_first_downs %></p>
+    </div>
+    <hr class="divide">
+    <div class="flex flex-row justify-between">
+      <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-1st%')"
+        onmouseleave="openPopover(event,'tooltip-1st%')">
+        1st%:
+      </button>
+
+      <p class="p-3 text-center">
+        <%= @result.rushing_first_down_percentage %></p>
+    </div>
+    <hr class="divide">
+    <div class="flex flex-row justify-between">
+      <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-20+')"
+        onmouseleave="openPopover(event,'tooltip-20+')">
+        20+:
+      </button>
+
+      <p class="p-3 text-center">
+        <%= @result.rushes_for_more_than_20_yards %></p>
+    </div>
+    <hr class="divide">
+    <div class="flex flex-row justify-between">
+      <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-40+')"
+        onmouseleave="openPopover(event,'tooltip-40+')">
+        40+:
+      </button>
+
+      <p class="p-3 text-center">
+        <%= @result.rushes_for_more_than_40_yards %></p>
+    </div>
+    <hr class="divide">
+    <div class="flex flex-row justify-between">
+      <button class="p-3 text-center font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-fum')"
+        onmouseleave="openPopover(event,'tooltip-fum')">
+        Fum:
+      </button>
+
+      <p class="p-3 text-center"><%= @result.rushing_fumbles %></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,161 @@
+<%# Table %>
+
+<section>
+
+  <%# Table Web %>
+
+  <table class="hidden md:table shadow-lg mx-auto my-10">
+
+    <%# Table Web Headers%>
+
+    <tr class="sticky top-0">
+      <th class="bg-indigo-400 border text-left px-0 py-0 lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-player')"
+          onmouseleave="openPopover(event,'tooltip-player')">
+          Player
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-team')"
+          onmouseleave="openPopover(event,'tooltip-team')">
+          Team
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-pos')"
+          onmouseleave="openPopover(event,'tooltip-pos')">
+          Pos
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-att')"
+          onmouseleave="openPopover(event,'tooltip-att')">
+          Att
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-att/g')"
+          onmouseleave="openPopover(event,'tooltip-att/g')">
+          Att/G
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-yds')"
+          onmouseleave="openPopover(event,'tooltip-yds')">
+          Yds
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-avg')"
+          onmouseleave="openPopover(event,'tooltip-avg')">
+          Avg
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-yds/g')"
+          onmouseleave="openPopover(event,'tooltip-yds/g')">
+          Yds/G
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-td')"
+          onmouseleave="openPopover(event,'tooltip-td')">
+          TD
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-lng')"
+          onmouseleave="openPopover(event,'tooltip-lng')">
+          Lng
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-lng/td')"
+          onmouseleave="openPopover(event,'tooltip-lng/td')">
+          Lng/TD
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-1st')"
+          onmouseleave="openPopover(event,'tooltip-1st')">
+          1st
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-1st%')"
+          onmouseleave="openPopover(event,'tooltip-1st%')">
+          1st%
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-20+')"
+          onmouseleave="openPopover(event,'tooltip-20+')">
+          20+
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-40+')"
+          onmouseleave="openPopover(event,'tooltip-40+')">
+          40+
+        </button>
+      </th>
+      <th class="bg-indigo-400 border text-left lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4">
+        <button class="text-white font-semibold" type="button" onmouseenter="openPopover(event,'tooltip-fum')"
+          onmouseleave="openPopover(event,'tooltip-fum')">
+          FUM
+        </button>
+      </th>
+    </tr>
+
+    <%# Table Web Headers%>
+
+    <%# Table Web Body%>
+
+    <%= for result <- @results do%>
+
+    <tr>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.name %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.team %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.position %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.total_rushing_attempts %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.rushing_attempts_per_game %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.total_rushing_yards %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.rushing_yards_per_attempt %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.rushing_yards_per_game %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.total_rushing_touchdowns %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.longest_rush %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.was_longest_rush_a_touchdown %>
+      </td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.rushing_first_downs %></td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.rushing_first_down_percentage %>
+      </td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.rushes_for_more_than_20_yards %>
+      </td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.rushes_for_more_than_40_yards %>
+      </td>
+      <td class="border lg:px-3 lg:py-2 xl:px-5 xl:py-3 2xl:px-8 2xl:py-4"><%= result.rushing_fumbles %></td>
+    </tr>
+
+    <% end %>
+
+    <%# Table Web Body%>
+
+  </table>
+
+  <%# Table Web %>
+
+  <%# Table Mobile %>
+
+  <%= for result <- @results do%>
+
+  <%= live_component @socket, NflRushingWeb.Components.PlayerStatsTableMobileResultLive, result: result %>
+
+  <% end %>
+
+  <%# Table Mobile %>
+
+</section>
+
+<%# Table %>
+
+<%= live_component @socket, NflRushingWeb.Components.PlayerStatsTableTooltipsLive %>

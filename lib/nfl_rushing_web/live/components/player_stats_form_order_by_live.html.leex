@@ -1,0 +1,79 @@
+<%# Order by %>
+
+<div class="flex flex-row py-2 mx-auto sm:px-5">
+
+  <%# Select %>
+
+  <div class="my-auto mr-3">
+
+    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="order-by-0">
+      <%= @label %>
+    </label>
+
+    <div class="relative">
+
+      <%= if @order_by_value == "Yds" do %>
+      <%= select :params, @order_by_param, ["Yds", "-", "Lng", "TD"], class: "block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+      <% end %>
+
+      <%= if @order_by_value == "Lng" do %>
+      <%= select :params, @order_by_param, ["Lng", "-", "Yds", "TD"], class: "block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+      <% end %>
+
+      <%= if @order_by_value == "TD" do %>
+      <%= select :params, @order_by_param, ["TD", "-", "Yds", "Lng"], class: "block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+      <% end %>
+
+      <%= if @order_by_value == "-" do %>
+      <%= select :params, @order_by_param, ["-", "Yds", "Lng", "TD"], class: "block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
+      <% end %>
+
+      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+      </div>
+    </div>
+
+  </div>
+
+  <%# Select %>
+
+  <%# Radio %>
+
+  <div class="flex flex-col mt-auto">
+
+    <label class="flex flex-row align-middle font-bold">
+
+      <%= if @order_by_flow_value == "desc" do %>
+      <%= radio_button :params, @order_by_flow_param, "desc", class: "my-auto", checked: "checked" %>
+      <% else %>
+      <%= radio_button :params, @order_by_flow_param, "desc", class: "my-auto" %>
+      <% end %>
+
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 13l-5 5m0 0l-5-5m5 5V6" />
+      </svg>
+
+    </label>
+
+    <label class="flex flex-rowfont-bold">
+
+      <%= if @order_by_flow_value == "asc" do %>
+      <%= radio_button :params, @order_by_flow_param,"asc", class: "my-auto", checked: "checked" %>
+      <% else %>
+      <%= radio_button :params, @order_by_flow_param, "asc", class: "my-auto" %>
+      <% end %>
+
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12" />
+      </svg>
+
+    </label>
+
+  </div>
+
+  <%# Radio %>
+
+</div>
+
+<%# Order by%>
